@@ -1,6 +1,6 @@
 package com.exemplo.astroimagemdodia.data.repositories
 
-import com.exemplo.astroimagemdodia.data.calladapter.Mapper
+import com.exemplo.astroimagemdodia.data.mapper.Mapper
 import com.exemplo.astroimagemdodia.data.entities.ImageDayDataEntity
 import com.exemplo.astroimagemdodia.data.services.NasaService
 import com.exemplo.astroimagemdodia.domain.entities.ImageDayEntity
@@ -11,7 +11,8 @@ class ImageDayDataRepository(
     private val nasaService: NasaService
 ) : ImageDayRepository {
 
-    private val mapper = object : Mapper<ImageDayDataEntity> {
+    private val mapper = object :
+        Mapper<ImageDayDataEntity> {
         override fun execute(data: ImageDayDataEntity?): Any? {
             return data?.let {
                 ImageDayEntity(
